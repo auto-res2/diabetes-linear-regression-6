@@ -1,0 +1,1599 @@
+{
+  "sentences": {
+    "R01": "Efron ら [1] が用いた糖尿病データセットを使用した．",
+    "R02": "本データセットは糖尿病患者 442 名の記録からなり，各患者について年齢，性別，BMI，平均血圧，および 6 種類の血清測定値の計 10 個の説明変数と，ベースラインから 1 年後の病勢進行度を表す目的変数が与えられている．",
+    "R03": "データは公開されているファイルから取得し，ファイルの SHA-256 ハッシュ値が事前に固定した値と一致することを確認した上で使用した．",
+    "R04": "説明変数には標準化などの前処理を施していない．",
+    "R05": "目的変数の平均は 152.1，標準偏差は 77.0 である．",
+    "R06": "全 442 件を，訓練データ 353 件とテストデータ 89 件に無作為に分割した．",
+    "R07": "テストデータの割合は 20% とし，乱数のシードは 0 に固定した．",
+    "R08": "説明変数を x = (x_1, …, x_p)^T（p = 10），目的変数を y とし，線形回帰モデル ŷ = β_0 + Σ_j β_j x_j（式 (3)）を，訓練データに対して最小二乗法により当てはめた．",
+    "R09": "すべての説明変数を用い，正則化は行っていない．",
+    "R10": "実装には scikit-learn [2] の LinearRegression を用いた．",
+    "R11": "予測性能は，平均二乗誤差（MSE），二乗平均平方根誤差（RMSE），平均絶対誤差（MAE），および決定係数（R²）により評価した．",
+    "R12": "n 件のデータに対する MSE と R² は MSE = (1/n) Σ_i (y_i − ŷ_i)²（式 (4)），R² = 1 − Σ_i (y_i − ŷ_i)² / Σ_i (y_i − ȳ)²（式 (5)）で定義される．",
+    "R13": "ここで ȳ は当該データにおける目的変数の平均である．",
+    "R14": "RMSE は MSE の平方根，MAE は |y_i − ŷ_i| の平均である．",
+    "R15": "各指標は訓練データとテストデータのそれぞれについて算出した．",
+    "R16": "実験は Intel Core i5-10400 2.90GHz（論理 12 コア），メモリ 7.7 GiB の計算機上で行い，GPU は使用していない．",
+    "R17": "ソフトウェアには Python 3.13.3，NumPy 2.3.4，scikit-learn 1.7.2 を用いた．",
+    "R18": "実験コードと出力は公開している（脚注 2: https://github.com/auto-res2/diabetes-linear-regression-6）．",
+    "R19": "表 2 に，訓練データおよびテストデータに対する各評価指標の値を示す．",
+    "R20": "テストデータに対する MSE は 3424.3，RMSE は 58.5，R² は 0.332 であった．",
+    "R21": "テストデータに対する RMSE は目的変数の標準偏差 77.0 を下回っており，線形回帰モデルは目的変数の平均値を一律に予測する場合よりも小さい誤差で病勢進行度を予測できている．",
+    "R22": "一方，テストデータに対する R² は訓練データに対する値 0.554 を大きく下回った．",
+    "R23": "MSE についても，テストデータでの値は訓練データでの値 2734.8 より大きい．",
+    "R24": "これらの結果は，本モデルが訓練データに対してはある程度当てはまるものの，未知のデータに対する説明力は限定的であることを示している．",
+    "R25": "説明変数と目的変数の関係のうち，式 (3) の線形モデルで捉えられるのは一部にとどまると考えられる．",
+    "R26": "表 2: 線形回帰モデルの評価指標．MSE，RMSE，MAE は小さいほど，R² は大きいほど良い．訓練（353 件）: MSE 2734.8，RMSE 52.3，MAE 42.6，R² 0.554．テスト（89 件）: MSE 3424.3，RMSE 58.5，MAE 46.2，R² 0.332．"
+  },
+  "claims": [
+    {
+      "id": "R01_c1",
+      "sentence": "R01",
+      "claim": "Efron ら [1] が用いた糖尿病データセットを使用した",
+      "completion": {
+        "completer": "agent",
+        "sentence": "実行が読んだデータのファイルは，文献 [1] が示すファイルである",
+        "definitions": [
+          {
+            "term": "c1",
+            "meaning": "c2 ∧ c3"
+          },
+          {
+            "term": "実行が読んだデータのファイルの SHA-256，コードに固定した SHA-256，文献が示すファイル（配布元の URL のファイル）の SHA-256",
+            "meaning": "文字列"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R01_c1",
+        "arguments": [
+          "observedSha256",
+          "dataSha256",
+          "literatureSha256"
+        ]
+      }
+    },
+    {
+      "id": "R01_c2",
+      "sentence": "R01",
+      "claim": "実行が読んだファイルは，宣言したファイルである",
+      "completion": {
+        "completer": "agent",
+        "sentence": "実行が読んだファイルの SHA-256 は，コードに固定した SHA-256 と一致する",
+        "definitions": [
+          {
+            "term": "使用した",
+            "meaning": "実行がそのファイルを読んだ"
+          },
+          {
+            "term": "dataSha256",
+            "meaning": "コードに固定した値（出力の data.sha256）"
+          },
+          {
+            "term": "実行が読んだデータのファイルの SHA-256，コードに固定した SHA-256",
+            "meaning": "文字列"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R01_c2",
+        "arguments": [
+          "observedSha256",
+          "dataSha256"
+        ]
+      }
+    },
+    {
+      "id": "R01_c3",
+      "sentence": "R01",
+      "claim": "宣言したファイルは，文献 [1] が示すファイルである",
+      "completion": {
+        "completer": "agent",
+        "sentence": "コードに固定した SHA-256 は，文献が示すファイルの SHA-256 と一致する",
+        "definitions": [
+          {
+            "term": "literatureSha256",
+            "meaning": "文献が示すファイルの SHA-256。命題の引数にした"
+          },
+          {
+            "term": "コードに固定した SHA-256，文献が示すファイル（配布元の URL のファイル）の SHA-256",
+            "meaning": "文字列"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R01_c3",
+        "arguments": [
+          "dataSha256",
+          "literatureSha256"
+        ]
+      }
+    },
+    {
+      "id": "R01_c4",
+      "sentence": "R01",
+      "claim": "文献 [1] が示すファイルは，配布元の URL のファイルである",
+      "unverifiable": "文献が示すファイルを特定する検証器が無い",
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R01_c4",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R02_c1",
+      "sentence": "R02",
+      "claim": "糖尿病患者 442 名の記録からなり，説明変数は計 10 個である",
+      "completion": {
+        "completer": "agent",
+        "sentence": "データセットの行数（見出しを除く）は 442，説明変数の列数は 10 である",
+        "definitions": [
+          {
+            "term": "患者 442 名の記録",
+            "meaning": "ファイルの行数"
+          },
+          {
+            "term": "データセットの行数，説明変数の列数",
+            "meaning": "自然数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R02_c1",
+        "arguments": [
+          "nSamples",
+          "nFeatures"
+        ]
+      }
+    },
+    {
+      "id": "R02_c2",
+      "sentence": "R02",
+      "claim": "説明変数は年齢，性別，BMI，平均血圧，および 6 種類の血清測定値である",
+      "completion": {
+        "completer": "agent",
+        "sentence": "説明変数の列名は AGE，SEX，BMI，BP，S1〜S6 である",
+        "definitions": [
+          {
+            "term": "変数の意味",
+            "meaning": "ファイルの列名"
+          },
+          {
+            "term": "説明変数の列名",
+            "meaning": "文字列のリスト"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R02_c2",
+        "arguments": [
+          "featureColumns"
+        ]
+      }
+    },
+    {
+      "id": "R02_c3",
+      "sentence": "R02",
+      "claim": "目的変数は，ベースラインから 1 年後の病勢進行度を表す",
+      "completion": {
+        "completer": "agent",
+        "sentence": "目的変数の列名は Y である",
+        "definitions": [
+          {
+            "term": "1 年後の病勢進行度",
+            "meaning": "ファイルの列 Y"
+          },
+          {
+            "term": "目的変数の列名",
+            "meaning": "文字列"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R02_c3",
+        "arguments": [
+          "targetColumn"
+        ]
+      }
+    },
+    {
+      "id": "R03_c1",
+      "sentence": "R03",
+      "claim": "ファイルの SHA-256 ハッシュ値が，固定した値と一致する",
+      "completion": {
+        "completer": "agent",
+        "sentence": "ファイルの SHA-256 ハッシュ値が，固定した値と一致する",
+        "definitions": [
+          {
+            "term": "c1",
+            "meaning": "R01 の c2 と同じ命題"
+          },
+          {
+            "term": "実行が読んだデータのファイルの SHA-256，コードに固定した SHA-256",
+            "meaning": "文字列"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R03_c1",
+        "arguments": [
+          "observedSha256",
+          "dataSha256"
+        ]
+      }
+    },
+    {
+      "id": "R03_c2",
+      "sentence": "R03",
+      "claim": "値は事前に固定した",
+      "completion": {
+        "completer": "agent",
+        "sentence": "固定値は，本番の最初の run が実行した commit か，それより前の commit に書かれている",
+        "definitions": [
+          {
+            "term": "事前に",
+            "meaning": "本番の最初の run が実行した commit か，それより前の commit"
+          },
+          {
+            "term": "SHA-256 の固定値を書いた commit の位置，本番の最初の run の commit の位置",
+            "meaning": "自然数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R03_c2",
+        "arguments": [
+          "dataSha256DeclaredAt",
+          "firstFullRunAt"
+        ]
+      }
+    },
+    {
+      "id": "R03_c3",
+      "sentence": "R03",
+      "claim": "SHA-256 が固定値と一致しないファイルでは，実験は実行されない",
+      "unverifiable": "コードの振る舞いを判定する検証器が無い",
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R03_c3",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R04_c1",
+      "sentence": "R04",
+      "claim": "説明変数には標準化などの前処理を施していない",
+      "completion": {
+        "completer": "agent",
+        "sentence": "モデルに渡した説明変数の SHA-256 は，ファイルから読んだ説明変数の SHA-256 と同じである",
+        "definitions": [
+          {
+            "term": "前処理を施していない",
+            "meaning": "値が変わっていない"
+          },
+          {
+            "term": "値が同じ",
+            "meaning": "SHA-256 が同じ"
+          },
+          {
+            "term": "モデルに渡した説明変数の SHA-256，ファイルから読んだ説明変数（訓練データの行）の SHA-256",
+            "meaning": "文字列"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R04_c1",
+        "arguments": [
+          "modelInputXSha256",
+          "loadedXSha256"
+        ]
+      }
+    },
+    {
+      "id": "R05_c1",
+      "sentence": "R05",
+      "claim": "目的変数の平均は 152.1 である",
+      "completion": {
+        "completer": "agent",
+        "sentence": "全 442 件の目的変数の平均は，小数第 1 位に四捨五入すると 152.1 である",
+        "definitions": [
+          {
+            "term": "対象",
+            "meaning": "分割前の全 442 件"
+          },
+          {
+            "term": "値",
+            "meaning": "小数第 1 位に四捨五入"
+          },
+          {
+            "term": "全件の目的変数の平均",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R05_c1",
+        "arguments": [
+          "targetMean"
+        ]
+      }
+    },
+    {
+      "id": "R05_c2",
+      "sentence": "R05",
+      "claim": "目的変数の標準偏差は 77.0 である",
+      "completion": {
+        "completer": "agent",
+        "sentence": "全 442 件の目的変数の標準偏差（n で割る）は，小数第 1 位に四捨五入すると 77.0 である",
+        "definitions": [
+          {
+            "term": "標準偏差",
+            "meaning": "n で割る定義"
+          },
+          {
+            "term": "値",
+            "meaning": "小数第 1 位に四捨五入"
+          },
+          {
+            "term": "全件の目的変数の標準偏差（n で割る）",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R05_c2",
+        "arguments": [
+          "targetStd"
+        ]
+      }
+    },
+    {
+      "id": "R05_c3",
+      "sentence": "R05",
+      "claim": "出力に書かれた目的変数の平均と標準偏差は，全 442 件に対して定義どおりに計算した値を，そのまま書き出したものである",
+      "unverifiable": "コードの振る舞いを判定する検証器が無い",
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R05_c3",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R06_c1",
+      "sentence": "R06",
+      "claim": "全 442 件を，訓練データ 353 件とテストデータ 89 件に分割した",
+      "completion": {
+        "completer": "agent",
+        "sentence": "訓練データは 353 件，テストデータは 89 件であり，その和はデータセットの行数に等しい",
+        "definitions": [
+          {
+            "term": "訓練データの件数，テストデータの件数，データセットの行数",
+            "meaning": "自然数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R06_c1",
+        "arguments": [
+          "nTrain",
+          "nTest",
+          "nSamples"
+        ]
+      }
+    },
+    {
+      "id": "R06_c2",
+      "sentence": "R06",
+      "claim": "分割した",
+      "completion": {
+        "completer": "agent",
+        "sentence": "訓練データとテストデータは重ならず，合わせると全件になる",
+        "definitions": [
+          {
+            "term": "分割した",
+            "meaning": "重なりも漏れも無い"
+          },
+          {
+            "term": "訓練データに入った行の番号，テストデータに入った行の番号",
+            "meaning": "自然数のリスト"
+          },
+          {
+            "term": "データセットの行数",
+            "meaning": "自然数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R06_c2",
+        "arguments": [
+          "trainIndex",
+          "testIndex",
+          "nSamples"
+        ]
+      }
+    },
+    {
+      "id": "R06_c3",
+      "sentence": "R06",
+      "claim": "分割は，シードを入れた並べ替えの手続きで決まる",
+      "unverifiable": "コードの振る舞いを判定する検証器が無い",
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R06_c3",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R07_c1",
+      "sentence": "R07",
+      "claim": "テストデータの割合は 20% とした",
+      "completion": {
+        "completer": "agent",
+        "sentence": "テストデータの件数は，全件の 20% を切り上げた数である",
+        "definitions": [
+          {
+            "term": "割合は 20%",
+            "meaning": "全件 × 0.2 の切り上げ"
+          },
+          {
+            "term": "テストデータの件数，データセットの行数",
+            "meaning": "自然数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R07_c1",
+        "arguments": [
+          "nTest",
+          "nSamples"
+        ]
+      }
+    },
+    {
+      "id": "R07_c2",
+      "sentence": "R07",
+      "claim": "乱数のシードは 0 に固定した",
+      "completion": {
+        "completer": "agent",
+        "sentence": "分割の乱数のシードは 0 である",
+        "definitions": [
+          {
+            "term": "分割の乱数のシード",
+            "meaning": "自然数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R07_c2",
+        "arguments": [
+          "splitSeed"
+        ]
+      }
+    },
+    {
+      "id": "R08_c1",
+      "sentence": "R08",
+      "claim": "係数 β は，訓練データ上の残差の二乗和を最小にする",
+      "unverifiable": "コードの振る舞いを判定する検証器が無い",
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R08_c1",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R08_c2",
+      "sentence": "R08",
+      "claim": "線形回帰モデルは ŷ = β_0 + Σ_j β_j x_j（式 (3)）である",
+      "definition": true,
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R08_c2",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R09_c1",
+      "sentence": "R09",
+      "claim": "すべての説明変数を用いた",
+      "completion": {
+        "completer": "agent",
+        "sentence": "モデルが使った説明変数の数は 10 である",
+        "definitions": [
+          {
+            "term": "モデルが使った説明変数の数，説明変数の列数",
+            "meaning": "自然数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R09_c1",
+        "arguments": [
+          "usedFeatureCount",
+          "nFeatures"
+        ]
+      }
+    },
+    {
+      "id": "R09_c2",
+      "sentence": "R09",
+      "claim": "正則化の係数は 0 である",
+      "unverifiable": "コードの振る舞いを判定する検証器が無い",
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R09_c2",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R10_c1",
+      "sentence": "R10",
+      "claim": "実装には scikit-learn [2] の LinearRegression を用いた",
+      "completion": {
+        "completer": "agent",
+        "sentence": "当てはめに呼ばれた関数は，sklearn.linear_model.LinearRegression である",
+        "definitions": [
+          {
+            "term": "当てはめに呼ばれた関数",
+            "meaning": "文字列"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R10_c1",
+        "arguments": [
+          "fitFunction"
+        ]
+      }
+    },
+    {
+      "id": "R11_c1",
+      "sentence": "R11",
+      "claim": "予測性能は，MSE，RMSE，MAE，および R² により評価した",
+      "completion": {
+        "completer": "agent",
+        "sentence": "出力に，訓練データとテストデータのそれぞれについて，MSE，RMSE，MAE，R² の値がある",
+        "definitions": [
+          {
+            "term": "評価した",
+            "meaning": "指標の値が出力にある"
+          },
+          {
+            "term": "出力にある値の名前",
+            "meaning": "文字列のリスト"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R11_c1",
+        "arguments": [
+          "outputKeys"
+        ]
+      }
+    },
+    {
+      "id": "R12_c1",
+      "sentence": "R12",
+      "claim": "MSE = (1/n) Σ (y_i − ŷ_i)²，R² = 1 − Σ (y_i − ŷ_i)² / Σ (y_i − ȳ)²",
+      "definition": true,
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R12_c1",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R13_c1",
+      "sentence": "R13",
+      "claim": "ȳ は，指標を計算する側のデータにおける目的変数の平均である",
+      "definition": true,
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R13_c1",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R14_c1",
+      "sentence": "R14",
+      "claim": "RMSE は MSE の平方根である",
+      "completion": {
+        "completer": "agent",
+        "sentence": "訓練データとテストデータのそれぞれで，RMSE の二乗と MSE の差の絶対値は rmseSquaredTolerance 以下である",
+        "definitions": [
+          {
+            "term": "MSE の平方根",
+            "meaning": "RMSE² と MSE が許容幅以内で等しい"
+          },
+          {
+            "term": "rmseSquaredTolerance",
+            "meaning": "1/1000000"
+          },
+          {
+            "term": "訓練データに対する RMSE，訓練データに対する MSE，テストデータに対する RMSE，テストデータに対する MSE，RMSE の二乗と MSE を等しいとみなす許容幅",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R14_c1",
+        "arguments": [
+          "trainRmse",
+          "trainMse",
+          "testRmse",
+          "testMse",
+          "rmseSquaredTolerance"
+        ]
+      }
+    },
+    {
+      "id": "R14_c2",
+      "sentence": "R14",
+      "claim": "許容幅を，結果を見た後に決めていない",
+      "completion": {
+        "completer": "agent",
+        "sentence": "rmseSquaredTolerance を宣言した commit は，本番の最初の run が実行した commit か，それより前にある",
+        "definitions": [
+          {
+            "term": "結果を見た後に決めていない",
+            "meaning": "宣言の commit が，本番の最初の run が実行した commit か，それより前"
+          },
+          {
+            "term": "rmseSquaredTolerance を宣言した commit の位置，本番の最初の run の commit の位置",
+            "meaning": "自然数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R14_c2",
+        "arguments": [
+          "rmseSquaredToleranceDeclaredAt",
+          "firstFullRunAt"
+        ]
+      }
+    },
+    {
+      "id": "R14_c3",
+      "sentence": "R14",
+      "claim": "MAE は |y_i − ŷ_i| の平均である",
+      "definition": true,
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R14_c3",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R14_c4",
+      "sentence": "R14",
+      "claim": "RMSE は MSE の平方根である",
+      "definition": true,
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R14_c4",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R15_c1",
+      "sentence": "R15",
+      "claim": "各指標は訓練データとテストデータのそれぞれについて算出した",
+      "completion": {
+        "completer": "agent",
+        "sentence": "出力に，訓練データとテストデータのそれぞれについて，4 つの指標の値がある",
+        "definitions": [
+          {
+            "term": "c1",
+            "meaning": "R11 の c1 と同じ命題"
+          },
+          {
+            "term": "出力にある値の名前",
+            "meaning": "文字列のリスト"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R15_c1",
+        "arguments": [
+          "outputKeys"
+        ]
+      }
+    },
+    {
+      "id": "R16_c1",
+      "sentence": "R16",
+      "claim": "実験は Intel Core i5-10400 2.90GHz（論理 12 コア），メモリ 7.7 GiB の計算機上で行った",
+      "unverifiable": "元の実験の計算機を確かめる検証器が無い（記録は実験コードが自分で書いたもので、検証時の計算機とは別）",
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R16_c1",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R16_c2",
+      "sentence": "R16",
+      "claim": "使った GPU の数は 0 である",
+      "unverifiable": "GPU の使用を観測する検証器が無い",
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R16_c2",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R17_c1",
+      "sentence": "R17",
+      "claim": "ソフトウェアには Python 3.13.3，NumPy 2.3.4，scikit-learn 1.7.2 を用いた",
+      "completion": {
+        "completer": "agent",
+        "sentence": "出力に記録された版は，Python 3.13.3，NumPy 2.3.4，scikit-learn 1.7.2 である",
+        "definitions": [
+          {
+            "term": "用いた",
+            "meaning": "実験のコードが出力に記録した版"
+          },
+          {
+            "term": "出力に記録された Python の版，出力に記録された NumPy の版，出力に記録された scikit-learn の版",
+            "meaning": "文字列"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R17_c1",
+        "arguments": [
+          "envPython",
+          "envNumpy",
+          "envScikitLearn"
+        ]
+      }
+    },
+    {
+      "id": "R18_c1",
+      "sentence": "R18",
+      "claim": "実験コードと出力は公開している",
+      "completion": {
+        "completer": "agent",
+        "sentence": "脚注の URL のリポジトリは public で，実験のコードと出力のファイルを含む",
+        "definitions": [
+          {
+            "term": "公開している",
+            "meaning": "リポジトリが public"
+          },
+          {
+            "term": "リポジトリが公開されているか",
+            "meaning": "真偽"
+          },
+          {
+            "term": "リポジトリのファイル",
+            "meaning": "文字列のリスト"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R18_c1",
+        "arguments": [
+          "repositoryPublic",
+          "repositoryFiles"
+        ]
+      }
+    },
+    {
+      "id": "R19_c1",
+      "sentence": "R19",
+      "claim": "表 2 に，訓練データとテストデータのそれぞれについて，MSE，RMSE，MAE，R² の欄がある",
+      "unverifiable": "論文の表を読む検証器が無い",
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R19_c1",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R20_c1",
+      "sentence": "R20",
+      "claim": "テストデータに対する MSE は 3424.3 であった",
+      "completion": {
+        "completer": "agent",
+        "sentence": "テストデータに対する MSE は，小数第 1 位に四捨五入すると 3424.3 である",
+        "definitions": [
+          {
+            "term": "値",
+            "meaning": "小数第 1 位に四捨五入"
+          },
+          {
+            "term": "テストデータに対する MSE",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R20_c1",
+        "arguments": [
+          "testMse"
+        ]
+      }
+    },
+    {
+      "id": "R20_c2",
+      "sentence": "R20",
+      "claim": "テストデータに対する RMSE は 58.5 であった",
+      "completion": {
+        "completer": "agent",
+        "sentence": "テストデータに対する RMSE は，小数第 1 位に四捨五入すると 58.5 である",
+        "definitions": [
+          {
+            "term": "値",
+            "meaning": "小数第 1 位に四捨五入"
+          },
+          {
+            "term": "テストデータに対する RMSE",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R20_c2",
+        "arguments": [
+          "testRmse"
+        ]
+      }
+    },
+    {
+      "id": "R20_c3",
+      "sentence": "R20",
+      "claim": "テストデータに対する R² は 0.332 であった",
+      "completion": {
+        "completer": "agent",
+        "sentence": "テストデータに対する R² は，小数第 3 位に四捨五入すると 0.332 である",
+        "definitions": [
+          {
+            "term": "値",
+            "meaning": "小数第 3 位に四捨五入"
+          },
+          {
+            "term": "テストデータに対する R²",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R20_c3",
+        "arguments": [
+          "testR2"
+        ]
+      }
+    },
+    {
+      "id": "R21_c1",
+      "sentence": "R21",
+      "claim": "テストデータに対する RMSE は目的変数の標準偏差 77.0 を下回っている",
+      "completion": {
+        "completer": "agent",
+        "sentence": "テストデータに対する RMSE は，全 442 件の目的変数の標準偏差より小さい",
+        "definitions": [
+          {
+            "term": "標準偏差 77.0",
+            "meaning": "全 442 件での値（R05 の c2）"
+          },
+          {
+            "term": "テストデータに対する RMSE，全件の目的変数の標準偏差（n で割る）",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R21_c1",
+        "arguments": [
+          "testRmse",
+          "targetStd"
+        ]
+      }
+    },
+    {
+      "id": "R21_c2",
+      "sentence": "R21",
+      "claim": "線形回帰モデルは目的変数の平均値を一律に予測する場合よりも小さい誤差で病勢進行度を予測できている",
+      "completion": {
+        "completer": "agent",
+        "sentence": "テストデータに対する RMSE は，平均値を一律に予測した場合のテストの RMSE より小さい",
+        "definitions": [
+          {
+            "term": "平均値を一律に予測する場合",
+            "meaning": "平均値を予測値とした場合の RMSE"
+          },
+          {
+            "term": "予測できている",
+            "meaning": "テストデータでの RMSE の比較"
+          },
+          {
+            "term": "テストデータに対する RMSE，訓練データの平均値を一律に予測した場合の，テストデータに対する RMSE",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R21_c2",
+        "arguments": [
+          "testRmse",
+          "meanPredictorTestRmse"
+        ]
+      }
+    },
+    {
+      "id": "R21_c3",
+      "sentence": "R21",
+      "claim": "c1 であるから，c2 である",
+      "completion": {
+        "completer": "agent",
+        "sentence": "c1 ならば c2 である",
+        "definitions": [
+          {
+            "term": "…を下回っており，…できている",
+            "meaning": "前半から後半を導いている"
+          },
+          {
+            "term": "テストデータに対する RMSE，全件の目的変数の標準偏差（n で割る），訓練データの平均値を一律に予測した場合の，テストデータに対する RMSE",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R21_c3",
+        "arguments": [
+          "testRmse",
+          "targetStd",
+          "meanPredictorTestRmse"
+        ]
+      }
+    },
+    {
+      "id": "R22_c1",
+      "sentence": "R22",
+      "claim": "テストデータに対する R² は訓練データに対する値を大きく下回った",
+      "completion": {
+        "completer": "agent",
+        "sentence": "テストデータに対する R² に margin を足しても，訓練データに対する R² 以下である",
+        "definitions": [
+          {
+            "term": "大きく下回った",
+            "meaning": "差が margin 以上"
+          },
+          {
+            "term": "margin",
+            "meaning": "1/10"
+          },
+          {
+            "term": "テストデータに対する R²，訓練データに対する R²，「大きく」とみなす差",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R22_c1",
+        "arguments": [
+          "testR2",
+          "trainR2",
+          "margin"
+        ]
+      }
+    },
+    {
+      "id": "R22_c2",
+      "sentence": "R22",
+      "claim": "訓練データに対する R² は 0.554 である",
+      "completion": {
+        "completer": "agent",
+        "sentence": "訓練データに対する R² は，小数第 3 位に四捨五入すると 0.554 である",
+        "definitions": [
+          {
+            "term": "値",
+            "meaning": "小数第 3 位に四捨五入"
+          },
+          {
+            "term": "訓練データに対する R²",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R22_c2",
+        "arguments": [
+          "trainR2"
+        ]
+      }
+    },
+    {
+      "id": "R22_c3",
+      "sentence": "R22",
+      "claim": "「大きく」の基準を，結果を見た後に決めていない",
+      "completion": {
+        "completer": "agent",
+        "sentence": "margin を宣言した commit は，本番の最初の run が実行した commit か，それより前にある",
+        "definitions": [
+          {
+            "term": "結果を見た後に決めていない",
+            "meaning": "宣言の commit が，本番の最初の run が実行した commit か，それより前"
+          },
+          {
+            "term": "margin を宣言した commit の位置，本番の最初の run の commit の位置",
+            "meaning": "自然数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R22_c3",
+        "arguments": [
+          "marginDeclaredAt",
+          "firstFullRunAt"
+        ]
+      }
+    },
+    {
+      "id": "R22_c4",
+      "sentence": "R22",
+      "claim": "出力に書かれた訓練とテストの R² は，それぞれのデータに対して式 (5) の定義どおりに計算した値を，そのまま書き出したものである",
+      "unverifiable": "コードの振る舞いを判定する検証器が無い",
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R22_c4",
+        "arguments": []
+      }
+    },
+    {
+      "id": "R23_c1",
+      "sentence": "R23",
+      "claim": "MSE は，テストデータでの値が訓練データでの値より大きい",
+      "completion": {
+        "completer": "agent",
+        "sentence": "テストデータに対する MSE は，訓練データに対する MSE より大きい",
+        "definitions": [
+          {
+            "term": "訓練データに対する MSE，テストデータに対する MSE",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R23_c1",
+        "arguments": [
+          "trainMse",
+          "testMse"
+        ]
+      }
+    },
+    {
+      "id": "R24_c1",
+      "sentence": "R24",
+      "claim": "本モデルは訓練データに対してはある程度当てはまる",
+      "completion": {
+        "completer": "agent",
+        "sentence": "訓練データに対する R² は trainR2LowerBound 以上である",
+        "definitions": [
+          {
+            "term": "ある程度当てはまる",
+            "meaning": "訓練の R² が trainR2LowerBound 以上"
+          },
+          {
+            "term": "trainR2LowerBound",
+            "meaning": "1/2"
+          },
+          {
+            "term": "訓練データに対する R²，「ある程度当てはまる」とみなす訓練の R² の下限",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R24_c1",
+        "arguments": [
+          "trainR2",
+          "trainR2LowerBound"
+        ]
+      }
+    },
+    {
+      "id": "R24_c2",
+      "sentence": "R24",
+      "claim": "本モデルの未知のデータに対する説明力は限定的である",
+      "completion": {
+        "completer": "agent",
+        "sentence": "テストデータに対する R² は testR2UpperBound 以下である",
+        "definitions": [
+          {
+            "term": "未知のデータ",
+            "meaning": "テストデータ（89 件）"
+          },
+          {
+            "term": "説明力は限定的",
+            "meaning": "R² が testR2UpperBound 以下"
+          },
+          {
+            "term": "testR2UpperBound",
+            "meaning": "1/2"
+          },
+          {
+            "term": "テストデータに対する R²，「説明力は限定的」とみなすテストの R² の上限",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R24_c2",
+        "arguments": [
+          "testR2",
+          "testR2UpperBound"
+        ]
+      }
+    },
+    {
+      "id": "R24_c3",
+      "sentence": "R24",
+      "claim": "これらの結果（R22，R23）は，c1 と c2 を示している",
+      "completion": {
+        "completer": "agent",
+        "sentence": "R22 の c1 と R23 の c1 が成り立つならば，c1 と c2 が成り立つ",
+        "definitions": [
+          {
+            "term": "示している",
+            "meaning": "前の 2 文から導いている"
+          },
+          {
+            "term": "テストデータに対する R²，訓練データに対する R²，「大きく」とみなす差，訓練データに対する MSE，テストデータに対する MSE，「ある程度当てはまる」とみなす訓練の R² の下限，「説明力は限定的」とみなすテストの R² の上限",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R24_c3",
+        "arguments": [
+          "testR2",
+          "trainR2",
+          "margin",
+          "trainMse",
+          "testMse",
+          "trainR2LowerBound",
+          "testR2UpperBound"
+        ]
+      }
+    },
+    {
+      "id": "R24_c4",
+      "sentence": "R24",
+      "claim": "「ある程度」と「限定的」の基準を，結果を見た後に決めていない",
+      "completion": {
+        "completer": "agent",
+        "sentence": "trainR2LowerBound と testR2UpperBound を宣言した commit は，本番の最初の run が実行した commit か，それより前にある",
+        "definitions": [
+          {
+            "term": "結果を見た後に決めていない",
+            "meaning": "宣言の commit が，本番の最初の run が実行した commit か，それより前"
+          },
+          {
+            "term": "trainR2LowerBound を宣言した commit の位置，testR2UpperBound を宣言した commit の位置，本番の最初の run の commit の位置",
+            "meaning": "自然数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R24_c4",
+        "arguments": [
+          "trainR2LowerBoundDeclaredAt",
+          "testR2UpperBoundDeclaredAt",
+          "firstFullRunAt"
+        ]
+      }
+    },
+    {
+      "id": "R25_c1",
+      "sentence": "R25",
+      "claim": "説明変数と目的変数の関係のうち，線形モデルで捉えられるのは一部にとどまる",
+      "completion": {
+        "completer": "agent",
+        "sentence": "テストデータに対する R² は，0 より大きく 1 より小さい",
+        "definitions": [
+          {
+            "term": "説明変数と目的変数の関係",
+            "meaning": "テストデータでの目的変数の分散"
+          },
+          {
+            "term": "捉えられるのは一部にとどまる",
+            "meaning": "説明できる分散が，0 より大きく全体より小さい"
+          },
+          {
+            "term": "テストデータに対する R²",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R25_c1",
+        "arguments": [
+          "testR2"
+        ]
+      }
+    },
+    {
+      "id": "R26_c1",
+      "sentence": "R26",
+      "claim": "表 2 の 8 つの値は，訓練とテストの MSE，RMSE，MAE，R² である",
+      "completion": {
+        "completer": "agent",
+        "sentence": "表の 8 つの値は，出力の値を四捨五入したものである（MSE，RMSE，MAE は小数第 1 位，R² は小数第 3 位）",
+        "definitions": [
+          {
+            "term": "値",
+            "meaning": "四捨五入"
+          },
+          {
+            "term": "訓練データに対する MSE，訓練データに対する RMSE，訓練データに対する MAE，訓練データに対する R²，テストデータに対する MSE，テストデータに対する RMSE，テストデータに対する MAE，テストデータに対する R²",
+            "meaning": "有理数"
+          }
+        ]
+      },
+      "formalization": {
+        "formalizer": "agent",
+        "proposition_name": "R26_c1",
+        "arguments": [
+          "trainMse",
+          "trainRmse",
+          "trainMae",
+          "trainR2",
+          "testMse",
+          "testRmse",
+          "testMae",
+          "testR2"
+        ]
+      }
+    }
+  ],
+  "variables": {
+    "observedSha256": {
+      "type": "String",
+      "meaning": "実行が読んだデータのファイルの SHA-256",
+      "verifier": "GitHub",
+      "query": "artifact_file_sha256",
+      "args": {
+        "path": "outputs/data/diabetes.tab.txt"
+      }
+    },
+    "dataSha256": {
+      "type": "String",
+      "meaning": "コードに固定した SHA-256",
+      "verifier": "GitHub",
+      "query": "source_text",
+      "args": {
+        "path": "src/download_data.py",
+        "pattern": "DATA_SHA256 = \"([0-9a-f]{64})\""
+      }
+    },
+    "literatureSha256": {
+      "type": "String",
+      "meaning": "文献が示すファイル（配布元の URL のファイル）の SHA-256",
+      "verifier": "GitHub",
+      "query": "artifact_json",
+      "args": {
+        "path": "fetched_urls.json",
+        "key": "https://www4.stat.ncsu.edu/~boos/var.select/diabetes.tab.txt"
+      }
+    },
+    "nSamples": {
+      "type": "ℕ",
+      "meaning": "データセットの行数",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "nFeatures": {
+      "type": "ℕ",
+      "meaning": "説明変数の列数",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "featureColumns": {
+      "type": "List String",
+      "meaning": "説明変数の列名",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "targetColumn": {
+      "type": "String",
+      "meaning": "目的変数の列名",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "dataSha256DeclaredAt": {
+      "type": "ℕ",
+      "meaning": "SHA-256 の固定値を書いた commit の位置",
+      "verifier": "GitHub",
+      "query": "source_text_commit_position",
+      "args": {
+        "path": "src/download_data.py",
+        "pattern": "DATA_SHA256 = \"([0-9a-f]{64})\""
+      }
+    },
+    "firstFullRunAt": {
+      "type": "ℕ",
+      "meaning": "本番の最初の run の commit の位置",
+      "verifier": "GitHub",
+      "query": "first_full_run_commit_position"
+    },
+    "modelInputXSha256": {
+      "type": "String",
+      "meaning": "モデルに渡した説明変数の SHA-256",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "loadedXSha256": {
+      "type": "String",
+      "meaning": "ファイルから読んだ説明変数（訓練データの行）の SHA-256",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "targetMean": {
+      "type": "ℚ",
+      "meaning": "全件の目的変数の平均",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "targetStd": {
+      "type": "ℚ",
+      "meaning": "全件の目的変数の標準偏差（n で割る）",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "nTrain": {
+      "type": "ℕ",
+      "meaning": "訓練データの件数",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "nTest": {
+      "type": "ℕ",
+      "meaning": "テストデータの件数",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "trainIndex": {
+      "type": "List ℕ",
+      "meaning": "訓練データに入った行の番号",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "testIndex": {
+      "type": "List ℕ",
+      "meaning": "テストデータに入った行の番号",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "splitSeed": {
+      "type": "ℕ",
+      "meaning": "分割の乱数のシード",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "usedFeatureCount": {
+      "type": "ℕ",
+      "meaning": "モデルが使った説明変数の数",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "fitFunction": {
+      "type": "String",
+      "meaning": "当てはめに呼ばれた関数",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "outputKeys": {
+      "type": "List String",
+      "meaning": "出力にある値の名前",
+      "verifier": "GitHub",
+      "query": "experiment_output_keys"
+    },
+    "trainMse": {
+      "type": "ℚ",
+      "meaning": "訓練データに対する MSE",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "trainRmse": {
+      "type": "ℚ",
+      "meaning": "訓練データに対する RMSE",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "trainMae": {
+      "type": "ℚ",
+      "meaning": "訓練データに対する MAE",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "trainR2": {
+      "type": "ℚ",
+      "meaning": "訓練データに対する R²",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "testMse": {
+      "type": "ℚ",
+      "meaning": "テストデータに対する MSE",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "testRmse": {
+      "type": "ℚ",
+      "meaning": "テストデータに対する RMSE",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "testMae": {
+      "type": "ℚ",
+      "meaning": "テストデータに対する MAE",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "testR2": {
+      "type": "ℚ",
+      "meaning": "テストデータに対する R²",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "rmseSquaredTolerance": {
+      "type": "ℚ",
+      "meaning": "RMSE の二乗と MSE を等しいとみなす許容幅",
+      "declared": "1/1000000"
+    },
+    "rmseSquaredToleranceDeclaredAt": {
+      "type": "ℕ",
+      "meaning": "rmseSquaredTolerance を宣言した commit の位置",
+      "verifier": "GitHub",
+      "query": "declared_value_commit_position",
+      "args": {
+        "declared_variable": "rmseSquaredTolerance"
+      }
+    },
+    "envPython": {
+      "type": "String",
+      "meaning": "出力に記録された Python の版",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "envNumpy": {
+      "type": "String",
+      "meaning": "出力に記録された NumPy の版",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "envScikitLearn": {
+      "type": "String",
+      "meaning": "出力に記録された scikit-learn の版",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "repositoryPublic": {
+      "type": "Bool",
+      "meaning": "リポジトリが公開されているか",
+      "verifier": "GitHub",
+      "query": "repository_public"
+    },
+    "repositoryFiles": {
+      "type": "List String",
+      "meaning": "リポジトリのファイル",
+      "verifier": "GitHub",
+      "query": "repository_files"
+    },
+    "meanPredictorTestRmse": {
+      "type": "ℚ",
+      "meaning": "訓練データの平均値を一律に予測した場合の，テストデータに対する RMSE",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "margin": {
+      "type": "ℚ",
+      "meaning": "「大きく」とみなす差",
+      "declared": "1/10"
+    },
+    "marginDeclaredAt": {
+      "type": "ℕ",
+      "meaning": "margin を宣言した commit の位置",
+      "verifier": "GitHub",
+      "query": "declared_value_commit_position",
+      "args": {
+        "declared_variable": "margin"
+      }
+    },
+    "trainR2LowerBound": {
+      "type": "ℚ",
+      "meaning": "「ある程度当てはまる」とみなす訓練の R² の下限",
+      "declared": "1/2"
+    },
+    "testR2UpperBound": {
+      "type": "ℚ",
+      "meaning": "「説明力は限定的」とみなすテストの R² の上限",
+      "declared": "1/2"
+    },
+    "trainR2LowerBoundDeclaredAt": {
+      "type": "ℕ",
+      "meaning": "trainR2LowerBound を宣言した commit の位置",
+      "verifier": "GitHub",
+      "query": "declared_value_commit_position",
+      "args": {
+        "declared_variable": "trainR2LowerBound"
+      }
+    },
+    "testR2UpperBoundDeclaredAt": {
+      "type": "ℕ",
+      "meaning": "testR2UpperBound を宣言した commit の位置",
+      "verifier": "GitHub",
+      "query": "declared_value_commit_position",
+      "args": {
+        "declared_variable": "testR2UpperBound"
+      }
+    },
+    "trainDataSha256": {
+      "type": "String",
+      "meaning": "モデルに入れた訓練データ（説明変数と目的変数）の SHA-256",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    },
+    "testDataSha256": {
+      "type": "String",
+      "meaning": "テストデータ（説明変数と目的変数）の SHA-256",
+      "verifier": "GitHub",
+      "query": "experiment_output"
+    }
+  },
+  "axioms": [
+    {
+      "name": "propext",
+      "reason": "Lean 本体の公理。互いに同値な 2 つの命題は等しい"
+    },
+    {
+      "name": "Quot.sound",
+      "reason": "Lean 本体の公理。ある関係で同じとみなした 2 つのものは、その関係で割った型では等しい"
+    },
+    {
+      "name": "Classical.choice",
+      "reason": "Lean 本体の公理。空でない型から元を 1 つ取り出せる"
+    }
+  ]
+}
