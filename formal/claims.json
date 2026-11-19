@@ -54,6 +54,11 @@
           "dataSha256",
           "literatureSha256"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -85,6 +90,11 @@
           "observedSha256",
           "dataSha256"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -112,6 +122,11 @@
           "dataSha256",
           "literatureSha256"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -123,6 +138,11 @@
         "formalizer": "agent",
         "proposition_name": "R01_c4",
         "arguments": []
+      },
+      "result": {
+        "status": "unverifiable",
+        "reason": "文献が示すファイルを特定する検証器が無い",
+        "axiom": "R01_c4_axiom"
       }
     },
     {
@@ -150,6 +170,11 @@
           "nSamples",
           "nFeatures"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -176,6 +201,11 @@
         "arguments": [
           "featureColumns"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -202,6 +232,11 @@
         "arguments": [
           "targetColumn"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -229,6 +264,11 @@
           "observedSha256",
           "dataSha256"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -256,6 +296,11 @@
           "dataSha256DeclaredAt",
           "firstFullRunAt"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -267,6 +312,11 @@
         "formalizer": "agent",
         "proposition_name": "R03_c3",
         "arguments": []
+      },
+      "result": {
+        "status": "unverifiable",
+        "reason": "コードの振る舞いを判定する検証器が無い",
+        "axiom": "R03_c3_axiom"
       }
     },
     {
@@ -298,6 +348,11 @@
           "modelInputXSha256",
           "loadedXSha256"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -327,6 +382,15 @@
         "proposition_name": "R05_c1",
         "arguments": [
           "targetMean"
+        ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -358,6 +422,15 @@
         "arguments": [
           "targetStd"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -369,6 +442,11 @@
         "formalizer": "agent",
         "proposition_name": "R05_c3",
         "arguments": []
+      },
+      "result": {
+        "status": "unverifiable",
+        "reason": "コードの振る舞いを判定する検証器が無い",
+        "axiom": "R05_c3_axiom"
       }
     },
     {
@@ -393,6 +471,11 @@
           "nTest",
           "nSamples"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -425,6 +508,15 @@
           "testIndex",
           "nSamples"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -436,6 +528,11 @@
         "formalizer": "agent",
         "proposition_name": "R06_c3",
         "arguments": []
+      },
+      "result": {
+        "status": "unverifiable",
+        "reason": "コードの振る舞いを判定する検証器が無い",
+        "axiom": "R06_c3_axiom"
       }
     },
     {
@@ -463,6 +560,15 @@
           "nTest",
           "nSamples"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -485,6 +591,11 @@
         "arguments": [
           "splitSeed"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -496,6 +607,11 @@
         "formalizer": "agent",
         "proposition_name": "R08_c1",
         "arguments": []
+      },
+      "result": {
+        "status": "unverifiable",
+        "reason": "コードの振る舞いを判定する検証器が無い",
+        "axiom": "R08_c1_axiom"
       }
     },
     {
@@ -507,6 +623,15 @@
         "formalizer": "agent",
         "proposition_name": "R08_c2",
         "arguments": []
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -530,6 +655,11 @@
           "usedFeatureCount",
           "nFeatures"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -541,6 +671,11 @@
         "formalizer": "agent",
         "proposition_name": "R09_c2",
         "arguments": []
+      },
+      "result": {
+        "status": "unverifiable",
+        "reason": "コードの振る舞いを判定する検証器が無い",
+        "axiom": "R09_c2_axiom"
       }
     },
     {
@@ -563,6 +698,11 @@
         "arguments": [
           "fitFunction"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -589,6 +729,13 @@
         "arguments": [
           "outputKeys"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "propext"
+        ]
       }
     },
     {
@@ -600,6 +747,15 @@
         "formalizer": "agent",
         "proposition_name": "R12_c1",
         "arguments": []
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -611,6 +767,15 @@
         "formalizer": "agent",
         "proposition_name": "R13_c1",
         "arguments": []
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -645,6 +810,15 @@
           "testMse",
           "rmseSquaredTolerance"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -672,6 +846,11 @@
           "rmseSquaredToleranceDeclaredAt",
           "firstFullRunAt"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -683,6 +862,15 @@
         "formalizer": "agent",
         "proposition_name": "R14_c3",
         "arguments": []
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -694,6 +882,15 @@
         "formalizer": "agent",
         "proposition_name": "R14_c4",
         "arguments": []
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -720,6 +917,13 @@
         "arguments": [
           "outputKeys"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "propext"
+        ]
       }
     },
     {
@@ -731,6 +935,11 @@
         "formalizer": "agent",
         "proposition_name": "R16_c1",
         "arguments": []
+      },
+      "result": {
+        "status": "unverifiable",
+        "reason": "元の実験の計算機を確かめる検証器が無い（記録は実験コードが自分で書いたもので、検証時の計算機とは別）",
+        "axiom": "R16_c1_axiom"
       }
     },
     {
@@ -742,6 +951,11 @@
         "formalizer": "agent",
         "proposition_name": "R16_c2",
         "arguments": []
+      },
+      "result": {
+        "status": "unverifiable",
+        "reason": "GPU の使用を観測する検証器が無い",
+        "axiom": "R16_c2_axiom"
       }
     },
     {
@@ -770,6 +984,11 @@
           "envNumpy",
           "envScikitLearn"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -801,6 +1020,13 @@
           "repositoryPublic",
           "repositoryFiles"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "propext"
+        ]
       }
     },
     {
@@ -812,6 +1038,11 @@
         "formalizer": "agent",
         "proposition_name": "R19_c1",
         "arguments": []
+      },
+      "result": {
+        "status": "unverifiable",
+        "reason": "論文の表を読む検証器が無い",
+        "axiom": "R19_c1_axiom"
       }
     },
     {
@@ -837,6 +1068,15 @@
         "proposition_name": "R20_c1",
         "arguments": [
           "testMse"
+        ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -864,6 +1104,15 @@
         "arguments": [
           "testRmse"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -889,6 +1138,15 @@
         "proposition_name": "R20_c3",
         "arguments": [
           "testR2"
+        ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -916,6 +1174,15 @@
         "arguments": [
           "testRmse",
           "targetStd"
+        ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -948,6 +1215,15 @@
           "testRmse",
           "meanPredictorTestRmse"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -975,6 +1251,15 @@
           "testRmse",
           "targetStd",
           "meanPredictorTestRmse"
+        ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -1008,6 +1293,15 @@
           "trainR2",
           "margin"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -1033,6 +1327,15 @@
         "proposition_name": "R22_c2",
         "arguments": [
           "trainR2"
+        ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -1061,6 +1364,11 @@
           "marginDeclaredAt",
           "firstFullRunAt"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -1072,6 +1380,11 @@
         "formalizer": "agent",
         "proposition_name": "R22_c4",
         "arguments": []
+      },
+      "result": {
+        "status": "unverifiable",
+        "reason": "コードの振る舞いを判定する検証器が無い",
+        "axiom": "R22_c4_axiom"
       }
     },
     {
@@ -1094,6 +1407,15 @@
         "arguments": [
           "trainMse",
           "testMse"
+        ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -1125,6 +1447,15 @@
         "arguments": [
           "trainR2",
           "trainR2LowerBound"
+        ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -1161,6 +1492,15 @@
           "testR2",
           "testR2UpperBound"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -1193,6 +1533,15 @@
           "trainR2LowerBound",
           "testR2UpperBound"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     },
     {
@@ -1221,6 +1570,11 @@
           "testR2UpperBoundDeclaredAt",
           "firstFullRunAt"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": []
       }
     },
     {
@@ -1250,6 +1604,15 @@
         "proposition_name": "R25_c1",
         "arguments": [
           "testR2"
+        ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
         ]
       }
     },
@@ -1284,6 +1647,15 @@
           "testMae",
           "testR2"
         ]
+      },
+      "result": {
+        "status": "verified",
+        "verdict": "真",
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
       }
     }
   ],
@@ -1295,6 +1667,11 @@
       "query": "artifact_file_sha256",
       "args": {
         "path": "outputs/data/diabetes.tab.txt"
+      },
+      "verified": {
+        "value": "4733febee697862c22139cdac87478a300ce0d101593deb07ed6c0f3328a99cd",
+        "mode": "full",
+        "verify_run": "44557745817"
       }
     },
     "dataSha256": {
@@ -1305,6 +1682,11 @@
       "args": {
         "path": "src/download_data.py",
         "pattern": "DATA_SHA256 = \"([0-9a-f]{64})\""
+      },
+      "verified": {
+        "value": "4733febee697862c22139cdac87478a300ce0d101593deb07ed6c0f3328a99cd",
+        "mode": "full",
+        "verify_run": "44557745817"
       }
     },
     "literatureSha256": {
@@ -1315,31 +1697,67 @@
       "args": {
         "path": "fetched_urls.json",
         "key": "https://www4.stat.ncsu.edu/~boos/var.select/diabetes.tab.txt"
+      },
+      "verified": {
+        "value": "4733febee697862c22139cdac87478a300ce0d101593deb07ed6c0f3328a99cd",
+        "mode": "full",
+        "verify_run": "44557745817"
       }
     },
     "nSamples": {
       "type": "ℕ",
       "meaning": "データセットの行数",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": 442,
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "nFeatures": {
       "type": "ℕ",
       "meaning": "説明変数の列数",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": 10,
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "featureColumns": {
       "type": "List String",
       "meaning": "説明変数の列名",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": [
+          "AGE",
+          "SEX",
+          "BMI",
+          "BP",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ],
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "targetColumn": {
       "type": "String",
       "meaning": "目的変数の列名",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "Y",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "dataSha256DeclaredAt": {
       "type": "ℕ",
@@ -1349,133 +1767,720 @@
       "args": {
         "path": "src/download_data.py",
         "pattern": "DATA_SHA256 = \"([0-9a-f]{64})\""
+      },
+      "verified": {
+        "value": 1,
+        "mode": "full",
+        "verify_run": "44557745817"
       }
     },
     "firstFullRunAt": {
       "type": "ℕ",
       "meaning": "本番の最初の run の commit の位置",
       "verifier": "GitHub",
-      "query": "first_full_run_commit_position"
+      "query": "first_full_run_commit_position",
+      "verified": {
+        "value": 1,
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "modelInputXSha256": {
       "type": "String",
       "meaning": "モデルに渡した説明変数の SHA-256",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "ae560a6efb1b86fbce564225a40502c1f85dcbbc7acb6f5830bac71c5aa7bfec",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "loadedXSha256": {
       "type": "String",
       "meaning": "ファイルから読んだ説明変数（訓練データの行）の SHA-256",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "ae560a6efb1b86fbce564225a40502c1f85dcbbc7acb6f5830bac71c5aa7bfec",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "targetMean": {
       "type": "ℚ",
       "meaning": "全件の目的変数の平均",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "7606674208144797/50000000000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "targetStd": {
       "type": "ℚ",
       "meaning": "全件の目的変数の標準偏差（n で割る）",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "1925143646736261/25000000000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "nTrain": {
       "type": "ℕ",
       "meaning": "訓練データの件数",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": 353,
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "nTest": {
       "type": "ℕ",
       "meaning": "テストデータの件数",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": 89,
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "trainIndex": {
       "type": "List ℕ",
       "meaning": "訓練データに入った行の番号",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": [
+          74,
+          26,
+          45,
+          389,
+          154,
+          4,
+          386,
+          225,
+          327,
+          264,
+          8,
+          190,
+          5,
+          371,
+          200,
+          313,
+          7,
+          325,
+          366,
+          22,
+          68,
+          437,
+          20,
+          353,
+          281,
+          14,
+          300,
+          240,
+          175,
+          405,
+          153,
+          75,
+          64,
+          55,
+          135,
+          329,
+          81,
+          316,
+          369,
+          328,
+          414,
+          421,
+          361,
+          415,
+          232,
+          224,
+          252,
+          254,
+          418,
+          106,
+          278,
+          63,
+          336,
+          378,
+          387,
+          430,
+          89,
+          93,
+          245,
+          272,
+          241,
+          92,
+          18,
+          145,
+          150,
+          322,
+          393,
+          297,
+          231,
+          66,
+          380,
+          412,
+          140,
+          101,
+          345,
+          247,
+          363,
+          17,
+          146,
+          315,
+          220,
+          30,
+          114,
+          235,
+          103,
+          219,
+          274,
+          176,
+          191,
+          116,
+          168,
+          367,
+          120,
+          218,
+          112,
+          303,
+          136,
+          308,
+          221,
+          126,
+          196,
+          332,
+          424,
+          133,
+          33,
+          419,
+          162,
+          34,
+          44,
+          97,
+          85,
+          61,
+          167,
+          199,
+          173,
+          229,
+          236,
+          433,
+          376,
+          250,
+          108,
+          407,
+          46,
+          357,
+          372,
+          263,
+          73,
+          137,
+          422,
+          246,
+          253,
+          29,
+          181,
+          374,
+          301,
+          51,
+          365,
+          391,
+          217,
+          432,
+          27,
+          2,
+          259,
+          156,
+          255,
+          417,
+          346,
+          138,
+          212,
+          104,
+          310,
+          306,
+          311,
+          215,
+          348,
+          189,
+          214,
+          35,
+          230,
+          204,
+          234,
+          293,
+          239,
+          210,
+          67,
+          24,
+          295,
+          216,
+          223,
+          129,
+          111,
+          166,
+          349,
+          40,
+          317,
+          79,
+          431,
+          350,
+          13,
+          364,
+          436,
+          228,
+          161,
+          83,
+          439,
+          416,
+          110,
+          149,
+          152,
+          16,
+          299,
+          109,
+          312,
+          139,
+          237,
+          260,
+          318,
+          355,
+          248,
+          342,
+          19,
+          269,
+          226,
+          340,
+          3,
+          309,
+          125,
+          280,
+          286,
+          77,
+          184,
+          354,
+          420,
+          275,
+          294,
+          384,
+          182,
+          395,
+          80,
+          307,
+          258,
+          11,
+          331,
+          86,
+          266,
+          36,
+          423,
+          58,
+          41,
+          270,
+          50,
+          209,
+          352,
+          351,
+          368,
+          123,
+          222,
+          62,
+          379,
+          130,
+          187,
+          23,
+          43,
+          0,
+          201,
+          377,
+          98,
+          304,
+          429,
+          178,
+          256,
+          94,
+          409,
+          95,
+          390,
+          169,
+          69,
+          305,
+          48,
+          341,
+          207,
+          279,
+          227,
+          148,
+          143,
+          334,
+          180,
+          356,
+          131,
+          425,
+          440,
+          262,
+          324,
+          203,
+          84,
+          121,
+          383,
+          406,
+          91,
+          82,
+          267,
+          119,
+          358,
+          291,
+          57,
+          321,
+          257,
+          394,
+          42,
+          105,
+          408,
+          273,
+          392,
+          38,
+          53,
+          385,
+          128,
+          290,
+          28,
+          183,
+          370,
+          163,
+          151,
+          244,
+          202,
+          31,
+          32,
+          127,
+          185,
+          413,
+          288,
+          398,
+          402,
+          147,
+          285,
+          410,
+          177,
+          99,
+          338,
+          335,
+          197,
+          243,
+          115,
+          404,
+          265,
+          72,
+          333,
+          25,
+          165,
+          337,
+          426,
+          174,
+          428,
+          39,
+          193,
+          314,
+          396,
+          88,
+          70,
+          87,
+          292,
+          242,
+          277,
+          211,
+          9,
+          359,
+          195,
+          251,
+          323,
+          192,
+          117,
+          47,
+          172
+        ],
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "testIndex": {
       "type": "List ℕ",
       "meaning": "テストデータに入った行の番号",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": [
+          362,
+          249,
+          271,
+          435,
+          400,
+          403,
+          12,
+          399,
+          198,
+          205,
+          78,
+          144,
+          298,
+          171,
+          268,
+          21,
+          194,
+          1,
+          10,
+          208,
+          76,
+          37,
+          388,
+          411,
+          289,
+          100,
+          261,
+          401,
+          319,
+          206,
+          375,
+          283,
+          373,
+          344,
+          287,
+          360,
+          179,
+          238,
+          434,
+          302,
+          158,
+          118,
+          339,
+          397,
+          330,
+          296,
+          164,
+          54,
+          157,
+          71,
+          284,
+          6,
+          343,
+          326,
+          159,
+          15,
+          320,
+          60,
+          282,
+          142,
+          56,
+          124,
+          107,
+          132,
+          382,
+          102,
+          160,
+          141,
+          186,
+          441,
+          90,
+          59,
+          347,
+          233,
+          427,
+          65,
+          438,
+          155,
+          122,
+          276,
+          188,
+          96,
+          170,
+          113,
+          381,
+          213,
+          134,
+          49,
+          52
+        ],
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "splitSeed": {
       "type": "ℕ",
       "meaning": "分割の乱数のシード",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": 0,
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "usedFeatureCount": {
       "type": "ℕ",
       "meaning": "モデルが使った説明変数の数",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": 10,
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "fitFunction": {
       "type": "String",
       "meaning": "当てはめに呼ばれた関数",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "sklearn.linear_model.LinearRegression",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "outputKeys": {
       "type": "List String",
       "meaning": "出力にある値の名前",
       "verifier": "GitHub",
-      "query": "experiment_output_keys"
+      "query": "experiment_output_keys",
+      "verified": {
+        "value": [
+          "nSamples",
+          "nFeatures",
+          "featureColumns",
+          "targetColumn",
+          "splitSeed",
+          "nTrain",
+          "nTest",
+          "trainIndex",
+          "testIndex",
+          "loadedXSha256",
+          "modelInputXSha256",
+          "trainDataSha256",
+          "testDataSha256",
+          "usedFeatureCount",
+          "fitFunction",
+          "targetMean",
+          "targetStd",
+          "trainMse",
+          "trainRmse",
+          "trainMae",
+          "trainR2",
+          "testMse",
+          "testRmse",
+          "testMae",
+          "testR2",
+          "meanPredictorTestRmse",
+          "envCpuModel",
+          "envCpuLogicalCores",
+          "envMemoryGib",
+          "envPython",
+          "envNumpy",
+          "envScikitLearn"
+        ],
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "trainMse": {
       "type": "ℚ",
       "meaning": "訓練データに対する MSE",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "1709219311922339/625000000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "trainRmse": {
       "type": "ℚ",
       "meaning": "訓練データに対する RMSE",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "5229484581749661/100000000000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "trainMae": {
       "type": "ℚ",
       "meaning": "訓練データに対する MAE",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "21296672157121723/500000000000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "trainR2": {
       "type": "ℚ",
       "meaning": "訓練データに対する R²",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "346203130086067/625000000000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "testMse": {
       "type": "ℚ",
       "meaning": "テストデータに対する MSE",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "8560648335746739/2500000000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "testRmse": {
       "type": "ℚ",
       "meaning": "テストデータに対する RMSE",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "1170343425546313/20000000000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "testMae": {
       "type": "ℚ",
       "meaning": "テストデータに対する MAE",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "1154339625092621/25000000000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "testR2": {
       "type": "ℚ",
       "meaning": "テストデータに対する R²",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "3244465012799/9765625000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "rmseSquaredTolerance": {
       "type": "ℚ",
@@ -1489,43 +2494,101 @@
       "query": "declared_value_commit_position",
       "args": {
         "declared_variable": "rmseSquaredTolerance"
+      },
+      "verified": {
+        "value": 1,
+        "mode": "full",
+        "verify_run": "44557745817"
       }
     },
     "envPython": {
       "type": "String",
       "meaning": "出力に記録された Python の版",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "3.13.3",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "envNumpy": {
       "type": "String",
       "meaning": "出力に記録された NumPy の版",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "2.3.4",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "envScikitLearn": {
       "type": "String",
       "meaning": "出力に記録された scikit-learn の版",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "1.7.2",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "repositoryPublic": {
       "type": "Bool",
       "meaning": "リポジトリが公開されているか",
       "verifier": "GitHub",
-      "query": "repository_public"
+      "query": "repository_public",
+      "verified": {
+        "value": true,
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "repositoryFiles": {
       "type": "List String",
       "meaning": "リポジトリのファイル",
       "verifier": "GitHub",
-      "query": "repository_files"
+      "query": "repository_files",
+      "verified": {
+        "value": [
+          ".github/workflows/run_experiment.yml",
+          ".github/workflows/verify_claims.yml",
+          ".gitignore",
+          "README.md",
+          "formal/claims.json",
+          "formal/cli.py",
+          "formal/declaration.json",
+          "formal/lean/Claims.lean",
+          "formal/lean/lake-manifest.json",
+          "formal/lean/lakefile.toml",
+          "formal/lean/lean-toolchain",
+          "formal/parse_claims.py",
+          "formal/verifiers.py",
+          "pyproject.toml",
+          "report/report.pdf",
+          "report/report.tex",
+          "report/values.tex",
+          "results/metrics.json",
+          "src/download_data.py",
+          "src/make_report_values.py",
+          "src/run_experiment.py",
+          "uv.lock"
+        ],
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "meanPredictorTestRmse": {
       "type": "ℚ",
       "meaning": "訓練データの平均値を一律に予測した場合の，テストデータに対する RMSE",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "1791435092072017/25000000000000",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "margin": {
       "type": "ℚ",
@@ -1539,6 +2602,11 @@
       "query": "declared_value_commit_position",
       "args": {
         "declared_variable": "margin"
+      },
+      "verified": {
+        "value": 1,
+        "mode": "full",
+        "verify_run": "44557745817"
       }
     },
     "trainR2LowerBound": {
@@ -1558,6 +2626,11 @@
       "query": "declared_value_commit_position",
       "args": {
         "declared_variable": "trainR2LowerBound"
+      },
+      "verified": {
+        "value": 1,
+        "mode": "full",
+        "verify_run": "44557745817"
       }
     },
     "testR2UpperBoundDeclaredAt": {
@@ -1567,19 +2640,34 @@
       "query": "declared_value_commit_position",
       "args": {
         "declared_variable": "testR2UpperBound"
+      },
+      "verified": {
+        "value": 1,
+        "mode": "full",
+        "verify_run": "44557745817"
       }
     },
     "trainDataSha256": {
       "type": "String",
       "meaning": "モデルに入れた訓練データ（説明変数と目的変数）の SHA-256",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "7968ccfdb6b347591a4a86e80dc98088c8d74ccc118ef1c80694e02748c425e2",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     },
     "testDataSha256": {
       "type": "String",
       "meaning": "テストデータ（説明変数と目的変数）の SHA-256",
       "verifier": "GitHub",
-      "query": "experiment_output"
+      "query": "experiment_output",
+      "verified": {
+        "value": "cb0d6b45a5531af0e7818c582c9f92b56ad466c787539acfbeef143da4349091",
+        "mode": "full",
+        "verify_run": "44557745817"
+      }
     }
   },
   "axioms": [
